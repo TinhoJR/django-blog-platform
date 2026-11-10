@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load custom_utilsy custom_utils %}
+
+
+
+
+{% block intro %}
+<div class="intro-section">
+    <h3>WELCOME TO THE MAGICAL PLACE,WHERE YOU ARE FREE TO WRITE WHATEVER AND HOWEVER YOU ARE FEELING..<br>
+    NO RESTRICTIONS,NO JUDGEMENT JUST YOU!
+</h3>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<h4>WITHOUT FURTHER DELAY LETS JUMP INTO IT... YOU ARE FREE LIKE A BIRD</h4>
+<p>AND SOME BIRDS ARE NOT MEANT TO BE CAGED</p>
+
+<h3>{{c_name}}</h3>
+<p>{{rules|frequency|format_frequency|safe}}</p>
+
+<p>{{name|name_initials}}</p>
+<p>{{name|word_count}}</p>
+<p>{{name|char_count}}</p>
+<p>{{name|reverse}}</p>
+
+{% endblock %}

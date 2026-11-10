@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+
+{% block home_content %}
+
+{% load custom_utilsx %}
+{% load custom_utilsy %}
+
+<h1>{{greeting}}</h1>
+
+<h1>welcome to {{company_name}}</h1>
+
+<h1> THIS IS THE HOME PAGE</h1>
+
+<a href="{% url 'about' %}">ABOUT</a>
+
+<a href="{% url 'contact' %}">contact</a>
+
+<ul>
+{% for rule in rules %}
+<li>{{rule}}</li>
+{% endfor %}
+</ul>
+
+<h1>Visit ABOUT PAGE TO SEE THE PRICE OF SIGN UP</h1>
+
+<ul>
+    {% for company in company_list %}
+    <li>{{company}}</li>
+    {% endfor %}
+</ul>
+
+
+{{name|separator}}
+
+<h3>{{name|caps}}</h3>
+
+<h1>{{other_name|length}}</h1>
+
+<h1>{{other_name|lower}}</h1>
+
+<h1>{{other_name|list_converter}}</h1>
+
+<h1>{{rules|last}}</h1>
+
+<h1>{{other_name|first}}</h1>
+
+
+<h3>{{price|emojify:'!!!'}}</h3>
+
+
+<h1>{{price|target_currency:'BTC'}}</h1>
+
+
+<h3>{% add_numbers 4 6%}</h3>
+
+
+<h3>{{price|calculate_discount:discount}}</h3>
+
+
+<a href="{% url 'create-blog' %}">
+    <button>CREATE BLOG</button>
+</a>
+
+
+<ul>
+    {% for post in posts %} 
+    <li><a href="{% url 'post_detail' post.id %}">{{post.title}}</a></li>
+    {% endfor %}
+</ul>
+
+
+
+
+{% greeting %}
+
+{% endblock %}

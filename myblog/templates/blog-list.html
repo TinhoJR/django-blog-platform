@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block nav_links %}
+{% if not user.is_authenticated %}
+<div class="navigations">     
+        <a href="{% url 'register' %}">REGISTER</a>
+        <a href="{% url 'login' %}">LOGIN</a>
+</div>
+{% else %}
+<div class="navigations">     
+        <a href="{% url 'profile' %}">PROFILE</a>
+        <a href="{% url 'dashboard' %}">DASHBOARD</a>
+</div>
+{% endif %}  
+
+{% endblock %}
+
+{% block intro %}
+<div class="intro-section">
+    <h2>ALL THE BLOGS YOU MADE...ENJOY!!!</h2>
+    <p>CLICK ON TITLE TO VIEW FULL DETAILS OF BLOG</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% if posts %}
+<table>
+    <thead>
+         <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>AUTHOR</th>
+            <th>BODY</th>
+            <th>USER</th>
+            <th>DATE</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <td>{{post.id}}</td>
+            <td><a href="{% url 'post_detail' post.id %}">{{post.title|upper}}</a></td>
+            <td>{{post.author|upper}}</td>
+            <td>{{post.body|upper}}</td>
+            <td>{{post.user}}</td>
+            <td>{{post.date}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h3>NO BLOGS ADDED YET</h3>
+{% endif %}
+
+{% endblock %}

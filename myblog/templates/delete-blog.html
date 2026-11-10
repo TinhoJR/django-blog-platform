@@ -1,0 +1,19 @@
+{% extends 'dashboard-base.html' %}
+
+{% block dashboard_content %}
+
+
+<form method="post" class="register-form">
+    {% csrf_token %}
+    <div class="intro-section">
+        <h2>THIS BLOG WILL BE DELETED FOR GOOD</h2>
+        <p>ARE YOU SURE??</p>
+    </div>
+
+    <button type="submit" class="btn">Delete</button>
+
+</form>
+
+
+{% endblock %}
+

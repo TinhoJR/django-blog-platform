@@ -1,0 +1,45 @@
+{% load static %}
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+
+        <div>
+            <h4>{{greeting}} {{user.username|upper}} </h4>
+        </div>
+
+        <div class="navigations">     
+            <a href="{% url 'profile' %}">PROFILE</a>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+
+                <button type="submit">LOGOUT</button>
+            </form>
+        </div>
+
+    </nav>
+
+    {% block dashboard_content %}
+
+    {% endblock %}
+
+   
+    <footer>
+        <div>
+            <h3>SAD TO SEE YOU LEAVE, CONTACT US AT 00090. COPYRIGHT</h3>
+        </div>
+    </footer>
+
+
+</body>
+
+
+</html>

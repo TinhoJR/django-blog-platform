@@ -1,0 +1,32 @@
+{% extends 'dashboard-base.html' %}
+
+{% block dashboard_content %}
+
+<div>
+
+    <div class="image-wrapper">
+        <img src="{{user.profile.dp}}" alt="" style="border-radius: 20px;">
+    </div>
+
+    <div class="navigations">
+        <p>Bio : <br>{{user.profile.bio}}</p>
+    </div>
+
+    <div class="navigations">
+        <p>First Name : <br>{{user.first_name|upper}}</p>
+        <p>Last  Name : <br>{{user.first_name|upper}}</p>
+        <p>Email : <br>{{user.email}}</p>
+    </div>
+    
+    <div class="navigations">
+        <a href="{% url 'edit_profile' user.pk %}">EDIT PROFILE</a>
+        <a href="{% url 'password_change' %}">CHANGE PASSWORD</a>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+

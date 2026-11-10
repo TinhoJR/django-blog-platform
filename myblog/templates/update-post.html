@@ -1,0 +1,17 @@
+{% extends 'dashboard-base.html' %}
+
+
+{% block dashboard_content %}
+
+<h3>EDIT BLOG</h3>
+
+<form method="post" style="justify-content: center; text-align: center;" class="register-form">
+    {% csrf_token %}
+
+    {{form}}
+
+    <button type="submit" class="btn">Apply</button>
+
+</form>
+
+{% endblock %}

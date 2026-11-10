@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="ASSETS/CSS/Style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        
+/* HOME PAGE START */
+
+#mobile-nav{
+    display: none;
+}
+
+.row{
+    width: 100%;
+
+}
+
+.theToggle-section{
+    text-align: end;
+    padding: 30px 30px;
+    background-color: whitesmoke;
+    width: 100%;
+    display: none;
+    
+}
+
+.nav-link.active{
+ color: green !important;
+}
+
+.theToggle-section a{
+    padding: 0px 30px;
+  
+}
+
+
+.faqQuestion-section{
+    padding: 40px 60px;
+}
+
+.faqQuestion-section h2{
+    font-size: 50px;
+    padding: 30px 0px;
+}
+
+.holding-section{
+    background-color: whitesmoke;
+    padding: 30px 30px;
+}
+
+.holding-section div{
+    background-color: white;
+    padding: 10px 10px;
+    margin-top: 10px;
+}
+
+.Question-section{
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    border: 0px;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.holdingSection-image img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+
+/* section-title    START */
+
+.section-title{
+    background-color: #014ca1;
+    padding: 20px 20px;
+   
+}
+
+.title-item{
+    text-align: end;
+}
+
+.title-item u{
+  
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    padding-right: 50px;
+}
+
+.title-item u:hover{
+    text-decoration: underline;
+}
+
+.title-item form{
+    position: relative;
+    padding-top: 20px;
+}
+
+.title-item form input{
+    width: 100%;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid #015fc9;
+    padding-left: 10px;
+    font-size: 17px;  
+   
+}
+
+.title-item form input:hover{
+    height: 40px;
+    border: 2px solid #015fc9;
+}
+
+.title-item form p{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    color: white;
+}
+
+.title-item form i{
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    font-size: 18px;
+    color: white;
+}
+
+.title-primary-btn{
+    background-color: #015fc9;
+    color: white;
+    height: 50px;
+    width: 120px;
+    border: 0px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.title-secondary-btn{
+    background-color: transparent;
+    height: 50px;
+    width: 120px;
+    border: 2px solid lightblue;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+
+}
+
+.dropdown-toggle{
+    
+    color: white;
+    text-decoration: none;
+   
+}
+
+
+/* section-title    END */
+
+
+/* background-section STARTS */
+
+.tester{
+    background-color: #0e3151;
+   
+}
+
+.background-section{
+    background-color: #0e3151;
+    letter-spacing: 1px;
+    padding: 70px 20px;
+    color: white;
+}
+
+.background-section h1{
+    font-size: 50px;
+    color: #015fc9;
+   
+}
+
+.background-section p{
+    font-size: 18px;
+    font-weight: 300;
+    padding: 6px 0px;
+}
+
+.background-section-image img{
+    width: 100%;
+    height: fit-content;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* background-section ENDS */
+
+/* feature-section STARTS */
+
+.feature-section{
+    background-color: whitesmoke;
+    padding: 90px 30px;
+    position: relative;
+}
+
+.feature-section h3{
+    text-align: center;
+    padding: 30px 0px;
+    letter-spacing: 2px;
+    font-size: 50px;
+    font-weight: 300;
+    color: #015fc9;
+}
+
+.feature-item{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-top: 12px solid #014ca1;
+    padding: 30px 15px;
+}
+
+
+.feature-item img{
+    width: 150px;
+    height: 150px;
+}
+
+.feature-item button{
+    display: block;
+    width: 160px;
+    height: 55px;
+    background-color: #014ca1;
+    font-size: 14px;
+    color: white;
+    border: 0px;
+    
+}
+
+.feature-item button i{
+    padding-left: 10px;
+}
+
+.feature-item h5{
+    color: darkblue;
+    padding: 15px 0px;
+}
+
+
+
+/* feature-section ENDS */
+
+/* wheel-section STARTS  */
+
+
+.wheel-section{
+    padding: 10px 20px;
+}
+
+
+.wheel-item img{
+    width: 100%;
+    height: auto;
+      
+}
+
+.wheel-item h4{
+    padding-top: 120px;
+    font-size: 35px;
+    font-weight: 650;
+}
+
+.wheel-item p{
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.navigator-btn{
+    width: 180px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid lightblue;
+    font-size: 12px;
+    font-weight: 500;
+    color: #014ca1;
+}
+
+.navigator-btn:hover{
+    background-color: #014ca1;
+    text-decoration: underline;
+    color: white;
+    border: 0px;
+}
+
+
+
+/* wheel-section ENDS */
+
+
+/* dedication-section STARTS */
+
+.dedication-section{
+    padding: 50px 30px;
+    background-color: whitesmoke;
+}
+
+.dedication-item h2{
+    color: #014ca1;
+    font-weight: 700;
+    padding: 25px 0px;
+}
+
+.dedication-item p{
+    font-size: 18px;
+    font-weight: 300;
+    padding-bottom: 15px;
+}
+
+.dedication-item img{
+    width: 100%;
+    height: auto;
+}
+
+
+/* dedication-section ENDS */
+
+.faq-section{
+    display: none;
+}
+
+
+/* footer STARTS */
+
+.footer-section{
+    padding: 50px 20px;
+}
+
+.footer-item h4{
+    padding: 20px 0px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.footer-item ul{
+    padding: 0px;
+    list-style-type: none;
+}
+
+.footer-item ul li{
+    padding-bottom: 10px;
+    color: gray;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.footer-item ul li:hover{
+    text-decoration: underline;
+    color: #015fc9;
+}
+
+
+/* footer ENDS */
+
+
+
+
+
+/* HOME PAGE ENDS */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="section-title">
+
+        <div class="row">
+
+            <div class="col-md-6 col-lg-6 col-12">
+
+                <div class="title-item">
+
+                    <a>
+                        <u>
+                            Contact Us
+                        </u>
+                        
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-lg-6 col-12">
+
+                <div class="row">
+
+                    <div class="col-md-6 col-lg-6">
+
+                        <div class="title-item">
+
+                            <form>
+
+                             <input placeholder="" type="text">
+
+                             <p>
+                                search
+                             </p>
+                             
+                             <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                            </form>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-6">
+
+                        <div class="title-item">
+
+
+                            <button class="title-primary-btn">
+                    
+                              PAY A BILL <i class="fa-solid fa-arrow-right-long"></i>
+                            </button>  
+                    
+                            <button class="title-secondary-btn dropdown">
+                    
+                              <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                    
+                                  MY ACCOUNT
+                    
+                              </a>
+                    
+                              <ul class="dropdown-menu">
+                    
+                                  <li>
+                                      <a class="dropdown-item" href="#">
+                                          Employer Login
+                                      </a>
+                                  </li>
+                    
+                                  <li>
+                                      <a class="dropdown-item" href="#">
+                                          Member Login
+                                      </a>
+                                  </li>
+                    
+                    
+                              </ul>
+                              
+                            </button>
+                    
+                    
+                          </div>
+
+                        
+
+
+
+                    </div>
+
+
+                </div>
+
+                
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-sm bg-light">
+
+        <div class="container-fluid" id="mobile-nav">
+
+            <a class="navbar-brand" href="#">
+                <h2>
+                    <i class="fa-solid fa-star-of-life"></i>
+                    LifeSure
+                </h2>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+                <ul class="navbar-nav">
+
+                  <li class="nav-item">
+
+
+                  </li>  
+
+
+
+
+
+
+                </ul>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="container-fluid" id="desktop-nav">
+
+            <a class="navbar-brand" href="#">
+                <h2>
+                    <i class="fa-solid fa-star-of-life"></i>
+                    LifeSure
+                </h2>
+            </a>
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+
+                <a class="nav-link" href="#" data-target="one">
+                    ABOUT US
+                </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" data-target="two">
+                     MEMBERS
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" data-target="three">
+                      EMPLOYERS  
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" data-target="four">
+                        RETIREES
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+
+    </nav>
+
+    <div class="theToggle-section" id="one">
+
+        <a>
+            WHO WE ARE
+        </a>
+
+        <a>
+            HOW WE SERVE YOU
+        </a>
+
+        <a>
+            OUR TEAM
+        </a>
+
+        <a>
+            SERVICE PROVIDERS
+        </a>
+
+        <a>
+            CAREERS
+        </a>
+
+        <button>
+            contact us
+        </button>
+
+
+    </div>
+
+    <div class="theToggle-section" id="two">
+
+        <a>
+           HEALTH
+        </a>
+
+        <a>
+            FINANCIAL
+        </a>
+
+        <a>
+            PRE-RETIREMENTS
+        </a>
+
+        <a>
+           LIFE & LOSS
+        </a>
+
+        <a>
+           DISABILITY
+        </a>
+
+        <a>
+           RESOURCES 
+         </a>
+
+       
+
+
+    </div>
+
+    <div class="theToggle-section" id="three">
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <button>
+            contact us
+        </button>
+
+
+    </div>
+
+    <div class="theToggle-section" id="four">
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <a>
+            Who we are
+        </a>
+
+        <button>
+            contact us
+        </button>
+
+
+    </div>
+
+
+    <div class="tester">
+
+       <div class="row">
+
+        <div class="col-md-6 col-lg-6 col-12">
+
+           <div class="background-section">
+
+            <h1>
+                Aligned in faith
+            </h1>
+
+            <h3>
+                with a passion to serve
+            </h3>
+
+            <p id="thefade">
+                LifeSure is here to help you be your best - providing health, retirement
+                and disability benefits that support our shared values. As your dedicated 
+                non-profit ministry partner, created by The Lutheran Church—Missouri Synod to 
+                serve you, we're in it for life: focusing on better outcomes for you - not profits.
+            </p>
+
+            <h5>
+                <strong>Get connected to the best care for you.</strong>
+            </h5>
+
+
+           </div> 
+
+        </div>
+
+
+        <div class="col-md-6 col-lg-6 col-12">
+
+            <div class="background-section-image">
+
+               <img src="ASSETS/IMAGES/background-2.jpg">
+
+            </div>
+
+        </div>
+
+
+       </div> 
+
+    </div>    
+
+
+    <div class="feature-section">
+
+        <h3>
+            Your well-being is our ministry
+        </h3>
+
+        <div class="row gy-4">
+
+           <div class="col-md-4 col-lg-4 col-12">
+
+            <div class="feature-item">
+
+               <center>
+
+                <img src="ASSETS/IMAGES/caring.png">
+
+                <button>
+                    MEMBERS <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+                <h5>
+                    Connecting you to your benefits
+                </h5>
+
+               </center>
+
+                <p>
+                    To serve well, it's important to be your best self – 
+                    and that's exactly what we're here for – to help care
+                    for you physically, emotionally and financially.
+                </p>
+
+
+            </div>
+
+
+           </div> 
+
+
+           <div class="col-md-4 col-lg-4 col-12">
+
+            <div class="feature-item">
+
+               <center>
+
+                <img src="ASSETS/IMAGES/church.png">
+
+                <button>
+                    EMPLOYERS <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+                <h5>
+                    Serving your ministry
+                </h5>
+
+               </center>
+
+                <p>
+                    We bring together thousands of ministries of all sizes,
+                    enabling us to offer you affordable, quality benefits,
+                    as well as business solutions that allow you to focus
+                    on what really matters.
+                </p>
+
+
+            </div>
+
+
+           </div>
+
+           <div class="col-md-4 col-lg-4 col-12">
+
+            <div class="feature-item">
+
+               <center>
+
+                <img src="ASSETS/IMAGES/benefits.png">
+
+                <button>
+                    RETIREES <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+                <h5>
+                    Thank you for your years of service
+                </h5>
+
+               </center>
+
+                <p>
+                    Concordia Plans cares for you in your retirement with income benefits,
+                    health benefits and resources designed specifically for you.
+                </p>
+
+
+            </div>
+
+
+           </div>
+
+
+        </div>
+
+
+
+    </div>
+
+ 
+    <div class="wheel-section">
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-6 col-12">
+
+            <div class="wheel-item">
+
+                <img src="ASSETS/IMAGES/homepage-wheel.png">
+
+            </div>
+
+
+          </div>  
+
+
+          <div class="col-md-6 col-lg-6 col-12">
+
+            <div class="wheel-item">
+
+               <h4>
+                Our purpose is serving you
+               </h4> 
+
+               <p>
+                With the goal of healthy church workers serving in thriving ministries,
+                CPS offers quality health care, financial programs and business solutions
+                so you can concentrate on your service in His name.
+               </p>
+
+               <button class="navigator-btn">
+                LEARN MORE ABOUT US
+               </button>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="dedication-section">
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-6 col-12">
+
+            <div class="dedication-item">
+
+               <h2>
+                Dedicated to LCMS organizations and church workers
+               </h2> 
+
+               <p>
+                CPS listens to your needs and cares for your total wellness so you can focus on 
+                your mission. You are our priority, and we are committed to continually exploring
+                best-in-class solutions to help you be well to serve well.
+               </p>
+
+               <button class="navigator-btn">
+                ALIGNED IN FAITH
+               </button>
+
+
+            </div>
+
+          </div> 
+          
+          <div class="col-md-6 col-lg-6 col-12">
+
+            <div class="dedication-item">
+
+                <img src="ASSETS/IMAGES/about-1.png">
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="faqQuestion-section">
+
+        <div class="row gy-5">
+    
+           <div class="col-md-6 col-lg-6 col-12">
+
+            <div>
+
+                <h2>
+                   Get The Answers To Common Questions
+                </h2>
+          
+          
+                <div class="holding-section">
+          
+                  <div>
+          
+                    <button type="button" class="Question-section" data-target="faqOne">
+                      What Does a Financial Advisor Do?
+                    </button>  
+          
+                    <div class="faq-section" id="faqOne">
+          
+                      <h4>
+                          Dolor sit amet consectetur adipisicing elit.
+          
+                      </h4>
+          
+                      <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          Ad nemo impedit, sapiente quis illo quia nulla atque 
+                          maxime fuga minima ipsa quae cum consequatur, sit, 
+                          delectus exercitationem odit officiis maiores! Neque, 
+                          quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.
+                      </p>
+          
+                    </div>
+          
+          
+          
+          
+                  </div>
+          
+                  <div>
+          
+                      <button type="button" class="Question-section" data-target="faqTwo">
+                        What Industries do you specialize In?
+                      </button>  
+            
+                      <div class="faq-section" id="faqTwo">
+            
+                        <h4>
+                            Dolor sit amet consectetur adipisicing elit.
+            
+                        </h4>
+            
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ad nemo impedit, sapiente quis illo quia nulla atque 
+                            maxime fuga minima ipsa quae cum consequatur, sit, 
+                            delectus exercitationem odit officiis maiores! Neque, 
+                            quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.
+                        </p>
+            
+                      </div>
+            
+          
+                  </div>
+
+                  <div>
+          
+                    <button type="button" class="Question-section" data-target="faqThree">
+                     Can you guarantee for growth?
+                    </button>  
+          
+                    <div class="faq-section" id="faqThree">
+          
+                      <h4>
+                          Dolor sit amet consectetur adipisicing elit.
+          
+                      </h4>
+          
+                      <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          Ad nemo impedit, sapiente quis illo quia nulla atque 
+                          maxime fuga minima ipsa quae cum consequatur, sit, 
+                          delectus exercitationem odit officiis maiores! Neque, 
+                          quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.
+                      </p>
+          
+                    </div>
+          
+                  </div>
+          
+                  <div>
+          
+                      <button type="button" class="Question-section" data-target="faqFour">
+                        What makes your business plans so specail?
+                      </button>  
+            
+                      <div class="faq-section" id="faqFour">
+            
+                        <h4>
+                            Dolor sit amet consectetur adipisicing elit.
+            
+                        </h4>
+            
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ad nemo impedit, sapiente quis illo quia nulla atque 
+                            maxime fuga minima ipsa quae cum consequatur, sit, 
+                            delectus exercitationem odit officiis maiores! Neque, 
+                            quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.
+                        </p>
+            
+                      </div>
+            
+          
+                  </div>
+          
+              </div>
+
+          
+              </div>
+            
+           </div> 
+    
+           <div class="col-md-6 col-lg-6 col-12">
+
+            <div class="holdingSection-image">
+
+                <img src="ASSETS/IMAGES/faq-img.jpg">
+
+            </div>
+
+           </div>
+    
+        </div>
+    
+       </div>
+
+
+    <footer>
+
+        <div class="footer-section">
+
+            <div class="row">
+
+                <div class="col-md-3 col-lg-3 col-12">
+       
+                   <div class="footer-item">
+       
+                      <h4>
+                       OUR SOLUTIONS
+                      </h4> 
+       
+                      <ul>
+       
+                       <li>
+                           Height Care & Wellness Solutions
+                       </li>
+       
+                       <li>
+                           Retirements Solution
+                       </li>
+       
+                       <li>
+                           Life and Disability Solution
+                       </li>
+       
+                       <li>
+                           Payroll Services
+                       </li>
+       
+                       <li>
+                           HR Services
+                       </li>
+       
+       
+                      </ul>
+       
+       
+       
+       
+                   </div>
+       
+       
+                </div>
+       
+                <div class="col-md-3 col-lg-3 col-12">
+       
+                    <div class="footer-item">
+        
+                       <h4>
+                        HOW WE SERVE YOU
+                       </h4> 
+        
+                       <ul>
+        
+                        <li>
+                            How We Serve Your Ministry
+                        </li>
+        
+                        <li>
+                            Benefits That Align With Your Beliefs
+                        </li>
+        
+                        <li>
+                            Services You Can Rely On
+                        </li>
+        
+                        <li>
+                         Benefits For Your Ministry
+                        </li>
+        
+                        <li>
+                            Educating Your Ministry
+                        </li>
+
+                        <li>
+                            Caring For You
+                        </li>
+        
+        
+                       </ul>
+        
+    
+                    </div>
+        
+        
+                 </div>
+
+                 <div class="col-lg-2 col-lg-2 col-12">
+
+                    <div class="footer-item">
+
+                        <h4>
+                            ABOUT US
+                        </h4>
+
+                        <ul>
+
+                          <li>
+                            Who We Are
+                          </li>  
+
+                          <li>
+                            How We Serve You
+                          </li>
+
+                          <li>
+                            Our Team
+                          </li>
+
+                          <li>
+                            Service Providers
+                          </li>
+
+                          <li>
+                            Careers
+                          </li>
+
+                          <li>
+                            Contact Us
+                          </li>
+
+                        </ul>
+
+
+                    </div>
+
+
+                 </div>
+
+                 <div class="col-lg-2 col-lg-2 col-12">
+
+                    <div class="footer-item">
+
+                        <h4>
+                            LEGAL NOTICES
+                        </h4>
+
+                        <ul>
+
+                          <li>
+                            What Is HIPAA?
+                          </li>  
+
+                          <li>
+                            HIPAA Privacy Notice
+                          </li>
+
+                          <li>
+                            Terms & Conditions
+                          </li>
+
+                          <li>
+                            Privacy Policy
+                          </li>
+
+                          <li>
+                            Disclaimers & Notices
+                          </li>
+
+                          <li>
+                            Partners' MOVEit Data Breach
+                          </li>
+
+                        </ul>
+
+
+                    </div>
+
+
+                 </div>
+
+                 <div class="col-md-2 col-lg-2 col-12">
+
+                    <div class="footer-item">
+
+                        <h4>
+                            OUR PARTNERS
+                        </h4>
+
+                        <ul>
+
+                          <li>
+                            The Lutheran Church-Missouri Synod
+                          </li>  
+
+                          <li>
+                            Lutheran Church Extension Fund
+                          </li>
+
+                          <li>
+                            Concordia Publishing House
+                          </li>
+
+                          <li>
+                            The LCMS Foundation
+                          </li>
+
+                          <li>
+                            Lutheran Federal Credit Union
+                          </li>
+
+                        </ul>
+
+
+
+                    </div>
+
+
+                 </div>
+       
+              </div> 
+       
+
+        </div>
+      
+    </footer>
+
+   
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="ASSETS/JS/main.js">
+
+</script>
+
+</body>
+
+
+</html>

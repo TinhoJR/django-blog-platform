@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block nav_links %}
+{% if not user.is_authenticated %}
+<div class="navigations">     
+        <a href="{% url 'register' %}">REGISTER</a>
+        <a href="{% url 'login' %}">LOGIN</a>
+</div>
+{% else %}
+<div class="navigations">     
+        <a href="{% url 'profile' %}">PROFILE</a>
+        <a href="{% url 'dashboard' %}">DASHBOARD</a>
+</div>
+{% endif %}  
+
+{% endblock %}
+
+{% block intro %}
+<div class="intro-section">
+    <h2>SEE FULL DETAILS OF BLOG AND ENJOY</h2>
+    {% if user.is_authenticated %}
+    <p>DELETE OR EDIT BLOG</p>
+    <p>YOU ARE IN CONTROL!</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div>
+
+    <div>
+        <h4>TITLE : </h4>
+        <h3>{{post.title|upper}}</h3>
+    </div>
+    <hr>
+    <div>
+        <h4>AUTHOR :</h4>
+        <h3>{{post.user|upper}}</h3>
+    </div>
+    <hr>
+    <div>
+        <h4>BODY : </h4>
+        <h3>{{post.body|upper}}</h3>
+    </div>
+    <hr>
+    <div>
+        <h4>DATE : </h4>
+        <h3>{{post.date}}</h3>
+    </div>
+
+</div>
+
+<!-- <form method="post" action="{% url 'like-post' post.pk %}">
+    {% csrf_token %}
+    
+    <button type="submit"> 
+       {% if user in post.liked_by.all %}  
+        Unlike Post
+       {% else %} 
+       Like Post
+       {% endif %}
+    </button>
+</form> -->
+
+<button class="btn" data-post-id="{{post.pk}}">
+    {% if is_liked %}
+    &#9829;
+    {% else %}
+    &#9825;
+    {% endif %}
+</button>
+
+
+<p>current likes: <span id="like-count">{{post.liked_by.count}}</span></p>
+
+
+
+<div>
+
+    <h3>ALL Comments ({{post.comment.count}})</h3>
+    {% for comment in post.comment.all %}
+    <ul>
+        
+        <li><span>author  : {{comment.user.username|upper}}</span></li>
+        <li><span>comment : {{comment.comment|upper}}</span></li>
+        <li><span>date : {{comment.date}}</span></li>
+ 
+    </ul>
+
+    <!-- <form method="post" action="{% url 'like-comment' comment.pk %}">
+        {% csrf_token %}
+
+        <button type="submit"> 
+        {% if user in comment.liked_by.all %}  
+            Unlike comment
+        {% else %} 
+            Like comment
+        {% endif %}
+        </button>
+
+    </form> -->
+    <button class="comment-like-btn" data-comment-id="{{comment.pk}}">
+        {% if comment in request.user.comment_liked.all %}
+        &#9829;
+        {% else %}
+        &#9825;
+        {% endif %}
+    </button>
+
+    <p>total like : <span class="c-like-count">{{comment.liked_by.count}}</span></p>
+
+    {% endfor %}
+
+    
+
+
+    <form method="post" action="{% url 'add-comment' post.pk %}">
+    {% csrf_token %}
+
+    {{comment_form.as_p}}
+
+    <button type="submit"> Add Comment </button>
+
+    </form>
+
+
+
+</div>
+
+
+
+
+{% if user.is_authenticated and post.user == user %}
+<div class="navigations">    
+    <a href="{% url 'update-post' post.id %}">EDIT</a>
+    <a href="{% url 'delete-post' post.id %}">DELETE</a>
+</div>
+{% endif %}
+
+{% endblock%}
+

@@ -1,0 +1,35 @@
+<html>
+{% extends 'base.html' %}
+
+<head>
+
+    {% block about %}
+    <title>
+     DEMO ABOUT
+  </title>
+{% endblock %}
+
+</head>
+
+<body>
+
+    
+{% block home_content %}
+<h1>THIS IS ABOUT PAGE</h1>
+ <h1>contact info: {{company_num}}</h1>
+
+<a href="{% url 'home' %}">go back home</a>
+
+
+<h1>THE PRICE IS {% if price == 70000 %}
+                 <h2>200000</h2>
+                 {% else %}
+                  <h3>NOT A MEMBER YT</h3>
+                 {% endif %}
+</h1>
+
+{% endblock %}
+
+</body>
+
+</html>
