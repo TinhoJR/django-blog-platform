@@ -259,6 +259,162 @@ nav{
 /* DAILYVERSE SECTIONS STARTS */
 
 
+/*  */
+
+.article-section {
+    width: 100%;
+    padding: 40px 5%;
+}
+
+.article-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 30px;
+   
+}
+
+.article-card {
+    display: block;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+    
+}
+
+.article-image {
+    width: 100%;
+     aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f4f4f4;
+    border-radius: 8px;
+    
+}
+
+.article-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.04);
+}
+
+
+
+.article-detail h3{
+    padding: 15px 0px;
+    letter-spacing: 1px;
+    font-size: 15px !important;
+    font-weight: 600;
+}
+
+.article-detail a{
+    color: black;
+    text-decoration: none;  
+    font-size: 15px; 
+
+}
+
+.article-detail a i{
+    padding-left: 7px;
+    font-size: 13px;
+}
+
+.article-catigory-Date{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    
+}
+
+.article-catigory-Date div:first-child{
+    
+    background-color: lightblue;
+    padding: 0px 15px;
+    border-radius: 20px;
+   
+}
+
+.article-catigory-Date div h5{
+     font-size: 16px;
+     padding-top: 10px;
+}
+
+.article-catigory-Date p{
+    font-size: 13px !important;
+    padding-top: 5px;
+}
+
+.article-catigory-Date p i{
+    padding-right: 5px;
+}
+
+
+
+/*  */
+
+
+
+/* CATEGORY SECTION STARTS */
+
+.category-section{
+    padding: 40px 80px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.category-content{
+    columns: 3;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 40px 0px;
+}
+
+.category-btn{
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.6s ease-in-out;
+    color: black;
+}
+
+.category-btn:hover{
+    background-color: #2cb1bc;
+    color: white;
+}
+
+.category-scripture{
+    padding: 40px 0px 40px 50px;  
+    text-align: center; 
+    background-color: white;
+}
+
+.category-scripture h3{
+    padding: 10px 0px;
+}
+
+.category-verse{
+    text-align: center;
+}
+
+.category-verse h2{
+    padding: 30px 0px;
+    font-weight: 700;
+}
+
+.category-verse p{
+    font-size: 15px;
+    text-align: justify;
+}
+
+/* CATEGORY SECTION ENDS */
+
 
 .register-form{
     background-color: grey;

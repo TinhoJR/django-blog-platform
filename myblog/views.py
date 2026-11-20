@@ -16,6 +16,14 @@ class HomeView(TemplateView):
     template_name = "home.html"
 
 
+    def get_context_data(self, **kwargs):
+        ctx = super(HomeView,self).get_context_data()
+        ctx["posts"] = Post.objects.all()[:6]
+
+        return ctx
+
+
+
     # def get(self,request, *args , **kwargs):
         
     #     print(request.META.get("HTTP_X_FORWARDED_FOR"))
@@ -41,8 +49,6 @@ class HomeView(TemplateView):
             recipient_list=["michealugwu16@gmail.com"],
             fail_silently=False   
         )
-
-
 
 
     # def get(self, request, *args, **kwargs):

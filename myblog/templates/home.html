@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load humanize %}
 {% load custom_utilsy custom_utils %}
 
@@ -65,6 +66,119 @@
         </div>
      </div>
    </div>
+</section>
+
+
+<section class="article-section">
+    <div class="article-grid-wrapper">
+        {% for post in posts %}
+         <a href="{% url 'post_detail' post.pk %}" class="article-card">
+
+            <div class="article-detail">
+                    <div class="article-image">
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                        {% else %}
+                            <img src="{% static 'images/default-image.jpeg' %}" alt="Default image">
+                        {% endif %}
+                    </div>
+                    
+
+                    <div class="article-catigory-Date">
+                        <div>
+                           <h5>Faith</h5>
+                        </div>
+
+                        <div>
+                            <p><i class="fa-solid fa-calendar"></i>{{post.date|date:"F d, Y"}}</p>
+                        </div>
+                    </div>
+
+                    <h3>
+                        {{post.title}}
+                    </h3>
+
+                    <p>
+                        {{post.body}}   
+                    </p>
+
+                     <div class="article-catigory-Date">   
+                           <p><i class="fa-regular fa-user"></i>{{post.user.username}}</p>
+                     
+                            
+                    </div>
+                </div>
+
+         </a>
+        {% endfor %}
+    </div>
+</section>
+
+
+<section class="category-section">
+    <h4>
+        Categories
+    </h4>
+    <div>
+        <div class="row gy5">
+            <div class="col-md-7 col-lg-7 col-12">
+                <div class="category-content">
+                    <button class="category-btn">Faith</button>
+                    <button class="category-btn">Marriage</button>
+                    <button class="category-btn">Grief</button>
+                    <button class="category-btn">Hope</button>
+                    <button class="category-btn">Finance</button>
+                    <button class="category-btn">Prayer</button>
+                </div>
+            </div>
+            <div class="col-md-5 col-lg-5 col-12">
+                <div class="category-scripture">
+                    <h3>
+                        Bible Plugin
+                    </h3>
+
+                    <P>
+                        TODAY'S SCRIPTURE
+                    </P>
+
+                    <p>
+                        John 3:16
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-verse">
+        <h2>
+            Explore Christian Truth
+        </h2>
+
+        <p>
+            Step into a journey that transcends time and touches the very depths of your soul. 
+            To explore Christian truth is not simply to seek knowledge.it is to open your heart 
+            to a profound encounter with divine love and eternal hope. It is an invitation to discover 
+            the unshakable foundation upon which faith stands, a truth that whispers peace in the chaos, 
+            courage in the face of doubt, and light in the darkest moments.
+        <p> 
+            Connect with our community in Forums, discover new worship music, or deepen your faith with 
+            bible study materials. 
+            Christian truth calls us beyond surface understanding into a living relationship with the One 
+            who created us, who knows our deepest fears and dreams, and who offers grace beyond measure. 
+            It is the story of redemption written not just in ancient texts but etched into the fabric of 
+            our lives—a story that reveals that no matter where we come from, or what we have done, we are 
+            never beyond the reach of God’s mercy.
+        </p>
+        <p>
+            To explore Christian truth is to awaken to a reality that surpasses the fleeting nature of this world. 
+            It invites you to embrace a love so radical, so unwavering, that it transforms pain into purpose and 
+            sorrow into joy. It challenges you to walk the path of faith, not blindly, but with a heart open to wonder 
+            and a spirit yearning for meaning.
+        </p>
+        </p>
+    </div>
   </section>
+
+
 {% endblock %}
 
