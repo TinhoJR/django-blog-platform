@@ -1,142 +1,244 @@
+
 {% extends 'base.html' %}
+{% load static %}
 
-{% block nav_links %}
-{% if not user.is_authenticated %}
-<div class="navigations">     
-        <a href="{% url 'register' %}">REGISTER</a>
-        <a href="{% url 'login' %}">LOGIN</a>
-</div>
-{% else %}
-<div class="navigations">     
-        <a href="{% url 'profile' %}">PROFILE</a>
-        <a href="{% url 'dashboard' %}">DASHBOARD</a>
-</div>
-{% endif %}  
 
-{% endblock %}
 
 {% block intro %}
-<div class="intro-section">
-    <h2>SEE FULL DETAILS OF BLOG AND ENJOY</h2>
-    {% if user.is_authenticated %}
-    <p>DELETE OR EDIT BLOG</p>
-    <p>YOU ARE IN CONTROL!</p>
-    {% endif %}
+<div class="detail-intro">
+    <span>FAITH · REFLECTION · INSPIRATION</span>
+    <h1>Explore the Word. Grow in Faith.</h1>
+    <p>Thoughts, teachings and reflections to encourage your walk with God.</p>
 </div>
 {% endblock %}
+
 
 {% block content %}
 
-<div>
+<main class="blog-detail-page">
 
-    <div>
-        <h4>TITLE : </h4>
-        <h3>{{post.title|upper}}</h3>
-    </div>
-    <hr>
-    <div>
-        <h4>AUTHOR :</h4>
-        <h3>{{post.user|upper}}</h3>
-    </div>
-    <hr>
-    <div>
-        <h4>BODY : </h4>
-        <h3>{{post.body|upper}}</h3>
-    </div>
-    <hr>
-    <div>
-        <h4>DATE : </h4>
-        <h3>{{post.date}}</h3>
+    <!-- ARTICLE HEADER -->
+    <article class="blog-article">
+
+        <header class="article-header">
+
+            <span class="article-label">CHRISTIAN BLOG</span>
+
+            <h1 class="article-title">{{ post.title }}</h1>
+
+            <div class="article-meta">
+
+                <div class="article-author-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="article-author-info">
+                    <span class="article-author-name">
+                        {{ post.author|default:post.user.username }}
+                    </span>
+
+                    <span class="article-publish-date">
+                        {{ post.date|date:"F d, Y" }}
+                    </span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- FEATURED IMAGE -->
+        <div class="article-featured-image">
+
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+            {% else %}
+                <img src="{% static 'images/default-image.jpg' %}"
+                     alt="Christian blog article">
+            {% endif %}
+
+        </div>
+
+
+        <!-- ARTICLE BODY -->
+        <div class="article-body">
+            {{ post.body|linebreaks }}
+        </div>
+
+
+        <!-- POST ENGAGEMENT -->
+        <div class="post-engagement">
+
+            <div class="post-engagement-stats">
+
+                <span>
+                    <i class="fa-solid fa-heart"></i>
+                    <span id="like-count">{{ post.liked_by.count }}</span>
+                    Likes
+                </span>
+
+                <span>
+                    <i class="fa-regular fa-comment"></i>
+                    {{ comments|length }} Comments
+                </span>
+
+            </div>
+
+            <div class="post-engagement-actions">
+
+                <button type="button"
+                        class="btn post-like-btn"
+                        data-post-id="{{ post.pk }}"
+                        aria-label="Like this post">
+
+                    {% if is_liked %}
+                        <i class="fa-solid fa-heart"></i>
+                    {% else %}
+                        <i class="fa-regular fa-heart"></i>
+                    {% endif %}
+
+                    <span>{% if is_liked %}Liked{% else %}Like{% endif %}</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!-- COMMENTS SECTION -->
+    <section class="comments-section" id="comments">
+
+        <div class="comments-heading">
+            <div>
+                <span class="section-eyebrow">JOIN THE CONVERSATION</span>
+                <h2>Comments <span>({{ comments|length }})</span></h2>
+            </div>
+        </div>
+
+
+        <!-- COMMENT FORM -->
+        <div class="comment-form-wrapper">
+
+            <h3>Share your thoughts</h3>
+
+            <p>We'd love to hear what you think about this article.</p>
+
+            
+            {% if user.is_authenticated %}
+                <form method="post"
+                  action="{% url 'add-comment' post.pk %}"
+                  class="comment-form">
+
+                {% csrf_token %}
+
+                {{ comment_form.as_p }}
+
+                <button type="submit" class="submit-comment-btn">
+                    Post Comment
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+            {% else %}
+                <p><a href="{% url 'login' %}">Log in</a> to comment.</p>
+            {% endif %}
+
+        </div>
+
+
+        <!-- COMMENT LIST -->
+        <div class="comment-list">
+
+            {% for comment in comments %}
+
+            <article class="comment-card">
+
+                <div class="comment-top">
+
+                    <div class="comment-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="comment-author-info">
+                        <h4>{{ comment.user.username }}</h4>
+                        <span>{{ comment.date|date:"M d, Y" }}</span>
+                    </div>
+
+                </div>
+
+
+                <div class="comment-content">
+                    {{ comment.comment|linebreaksbr }}
+                </div>
+
+
+                <div class="comment-actions">
+
+                    <button type="button"
+                            class="comment-like-btn"
+                            data-comment-id="{{ comment.pk }}"
+                            aria-label="Like this comment">
+
+                        {% if user.is_authenticated and comment in user.comment_liked.all %}
+                            <i class="fa-solid fa-heart"></i>
+                        {% else %}
+                            <i class="fa-regular fa-heart"></i>
+                        {% endif %}
+
+                    </button>
+
+                    <span class="comment-like-count-wrap">
+                        <span class="c-like-count">{{ comment.liked_by.count }}</span>
+                        Likes
+                    </span>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="empty-comments">
+                <i class="fa-regular fa-comments"></i>
+                <h3>No comments yet</h3>
+                <p>Be the first to share your thoughts on this article.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- LOAD MORE -->
+        <div class="load-comments-wrapper"id="load-comments-wrapper" hidden>
+            <button type="button" class="load-comments-btn" id="load-more-comments">
+                Load More Comments
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+
+       
+    </section>
+
+
+    <!-- POST OWNER ACTIONS -->
+    {% if user.is_authenticated and post.user == user %}
+
+    <div class="article-owner-actions">
+        <a href="{% url 'update-post' post.id %}">
+            <i class="fa-solid fa-pen"></i> Edit Article
+        </a>
+
+        <a href="{% url 'delete-post' post.id %}">
+            <i class="fa-solid fa-trash"></i> Delete Article
+        </a>
     </div>
 
-</div>
-
-<!-- <form method="post" action="{% url 'like-post' post.pk %}">
-    {% csrf_token %}
-    
-    <button type="submit"> 
-       {% if user in post.liked_by.all %}  
-        Unlike Post
-       {% else %} 
-       Like Post
-       {% endif %}
-    </button>
-</form> -->
-
-<button class="btn" data-post-id="{{post.pk}}">
-    {% if is_liked %}
-    &#9829;
-    {% else %}
-    &#9825;
     {% endif %}
-</button>
 
+</main>
 
-<p>current likes: <span id="like-count">{{post.liked_by.count}}</span></p>
-
-
-
-<div>
-
-    <h3>ALL Comments ({{post.comment.count}})</h3>
-    {% for comment in post.comment.all %}
-    <ul>
-        
-        <li><span>author  : {{comment.user.username|upper}}</span></li>
-        <li><span>comment : {{comment.comment|upper}}</span></li>
-        <li><span>date : {{comment.date}}</span></li>
- 
-    </ul>
-
-    <!-- <form method="post" action="{% url 'like-comment' comment.pk %}">
-        {% csrf_token %}
-
-        <button type="submit"> 
-        {% if user in comment.liked_by.all %}  
-            Unlike comment
-        {% else %} 
-            Like comment
-        {% endif %}
-        </button>
-
-    </form> -->
-    <button class="comment-like-btn" data-comment-id="{{comment.pk}}">
-        {% if comment in request.user.comment_liked.all %}
-        &#9829;
-        {% else %}
-        &#9825;
-        {% endif %}
-    </button>
-
-    <p>total like : <span class="c-like-count">{{comment.liked_by.count}}</span></p>
-
-    {% endfor %}
-
-    
-
-
-    <form method="post" action="{% url 'add-comment' post.pk %}">
-    {% csrf_token %}
-
-    {{comment_form.as_p}}
-
-    <button type="submit"> Add Comment </button>
-
-    </form>
-
-
-
-</div>
-
-
-
-
-{% if user.is_authenticated and post.user == user %}
-<div class="navigations">    
-    <a href="{% url 'update-post' post.id %}">EDIT</a>
-    <a href="{% url 'delete-post' post.id %}">DELETE</a>
-</div>
-{% endif %}
-
-{% endblock%}
-
+{% endblock %}

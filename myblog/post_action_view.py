@@ -1,10 +1,16 @@
 from django.views.generic import View
 from . models import Post,Comment
 from django.http import JsonResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+class AjaxLoginRequiredMixin(LoginRequiredMixin):
 
-class LikeView(View):
+    def handle_no_permission(self):
+        return JsonResponse({"status": "error", "message": "login required"}, status=401)
+
+
+class LikeView(AjaxLoginRequiredMixin,View):
 
     # CHECK IF USER ALREADY LIKED A POST
     def post(self,request,*args,**kwargs):

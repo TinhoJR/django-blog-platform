@@ -177,14 +177,13 @@ elif ACTIVE_PROVIDER == 'resend':
         "RESEND_API_KEY" : os.getenv("RESEND_APIKEY")
     }
 
-
-
-
 elif ACTIVE_PROVIDER == 'brevo':
     pass
 
 
 from django.urls import reverse_lazy
+
+LOGIN_URL = reverse_lazy("login") 
 
 LOGIN_REDIRECT_URL = reverse_lazy("login-redirect")
 

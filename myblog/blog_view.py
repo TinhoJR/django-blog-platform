@@ -38,7 +38,7 @@ class PostDetailView(DetailView):
         ctx["name"] = "TINHO"
         ctx["comment_form"] = CommentForm()
         ctx["is_liked"] = self.object.liked_by.filter(pk=self.request.user.pk).exists()
-        # comments = Comment.objects.filter(post=self.object)
+        ctx["comments"] = Comment.objects.filter(post=self.object)
         # for comment in comments:
 
 

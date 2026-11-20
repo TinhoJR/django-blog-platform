@@ -13,6 +13,11 @@ async function handle_comment_likes(commentid) {
 
     });
 
+    if (response.status === 401) {
+        window.location.href = "/login/";   // your login URL
+        return;
+    }
+
     if(!response.ok){
       console.log("Request Failed", response.status);
       return;  
@@ -31,6 +36,11 @@ async function handle_post_likes(postid) {
             }
         })
         // HANDLE ERROR
+        if (response.status === 401) {
+            window.location.href = "/accounts/login/";   // your login URL
+            return;
+        }
+
         if(!response.ok){
             console.log("Request Failed", response.status);
             return;
@@ -101,6 +111,82 @@ comment_btn.forEach(function(c_btc) {
 })
 
 })
+
+
+// LOAD MORE COMMENTS
+    // ==================================
+
+    const commentCards = document.querySelectorAll(
+        ".comment-card"
+    );
+
+    const loadMoreBtn = document.querySelector(
+        "#load-more-comments"
+    );
+
+    const loadMoreWrapper = document.querySelector(
+        "#load-comments-wrapper"
+    );
+
+    const initialComments = 3;
+    const commentsPerLoad = 3;
+
+    let visibleComments = initialComments;
+
+
+    // Hide comments beyond the initial three.
+
+    commentCards.forEach(function (comment, index) {
+
+        if (index >= initialComments) {
+            comment.hidden = true;
+        }
+
+    });
+
+
+    // Only show Load More when there are additional comments.
+
+    if (commentCards.length > initialComments) {
+
+        loadMoreWrapper.hidden = false;
+
+    }
+
+
+    // Reveal another batch when clicked.
+
+    if (loadMoreBtn) {
+
+        loadMoreBtn.addEventListener("click", function () {
+
+            const nextLimit = visibleComments + commentsPerLoad;
+
+            commentCards.forEach(function (comment, index) {
+
+                if (index < nextLimit) {
+                    comment.hidden = false;
+                }
+
+            });
+
+            visibleComments = Math.min(
+                nextLimit,
+                commentCards.length
+            );
+
+
+            // Hide the button when every comment is visible.
+
+            if (visibleComments >= commentCards.length) {
+
+                loadMoreWrapper.hidden = true;
+
+            }
+
+        });
+
+    }
 
 
 
