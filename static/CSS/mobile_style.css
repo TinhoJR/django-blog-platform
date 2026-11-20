@@ -1,0 +1,27 @@
+@media screen and (max-width : 778px) {
+
+    #mobile-nav{
+        display: inherit;
+    }
+
+    #desktop-nav{
+        display: none;
+    }
+
+
+
+    /* DAILY VERSE SECTION */
+
+    .dailyVerse-section{
+        padding: 50px 20px;
+    }
+
+    .dailyverse-wrapper{
+        padding: 10px 0px 0px 0px;
+    }
+
+    .dailyVerse h5{    
+    font-size: 23px;   
+    }
+
+}    

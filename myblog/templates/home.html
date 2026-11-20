@@ -5,26 +5,66 @@
 
 
 
-{% block intro %}
-<div class="intro-section">
-    <h3>WELCOME TO THE MAGICAL PLACE,WHERE YOU ARE FREE TO WRITE WHATEVER AND HOWEVER YOU ARE FEELING..<br>
-    NO RESTRICTIONS,NO JUDGEMENT JUST YOU!
-</h3>
-</div>
-
-{% endblock %}
-
 {% block content %}
+<section class="hero-section">
+   <main>
+    <div class="bg-overlay"></div>
 
-<h4>WITHOUT FURTHER DELAY LETS JUMP INTO IT... YOU ARE FREE LIKE A BIRD</h4>
-<p>AND SOME BIRDS ARE NOT MEANT TO BE CAGED</p>
+     <div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="hero-content">
+                <h3>
+                   Find <span> hope,faith</span> & anwers through the word 
+                </h3>
 
-<h3>{{c_name}}</h3>
-<p>{{rules|frequency|format_frequency|safe}}</p>
+                <form>
+                    <input placeholder="Search for articles..." type="text" id="searchInput">
+                    <button type="submit">Search</button>
+                    <div class="searchResult"></div>
+                </form>
 
-<p>{{name|name_initials}}</p>
-<p>{{name|word_count}}</p>
-<p>{{name|char_count}}</p>
-<p>{{name|reverse}}</p>
+                <div class="callToaction-btn-wrapper">
+                    <button class="callToaction-btn">
+                       Explore Articles
+                    </button>
+                     <button class="callToaction-btn">
+                       Join Our Community
+                    </button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+   </main>
+</section>
 
+
+<section class="dailyVerse-section">
+   <div class="dailyverse-wrapper">
+     <div class="row gy-4 gx-0 gx-md-4">
+        <div class="col-md-5 col-lg-5 col-12">
+            <div class="dailyVerse-intro">
+                <h4>
+                    Verse of the Day
+                </h4>
+            </div>
+        </div>
+
+        <div class="col-md-7 col-lg-7 col-12">
+            <div class="dailyVerse">
+                <p>
+                    Psalm 24:17
+                </p>
+
+                <h5>
+                    When the righteous cry for help, the Lord hears and delivers them from 
+                    all troubles. 
+                </h5>
+            </div>
+        </div>
+     </div>
+   </div>
+  </section>
 {% endblock %}
+

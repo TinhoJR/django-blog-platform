@@ -27,7 +27,7 @@ class CreatePostView(LoginRequiredMixin,CreateView):
         return ctx  
 
 
-class PostDetailView(LoginRequiredMixin,DetailView):
+class PostDetailView(DetailView):
     model = Post
     template_name = "post_detail.html"
     context_object_name = "post"
